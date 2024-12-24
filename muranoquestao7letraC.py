@@ -52,5 +52,6 @@ def linear_regression(file_name):
     plt.show()
 
 linear_regression("googl")
+linear_regression("goog")
 linear_regression("aapl")
 linear_regression("msft")

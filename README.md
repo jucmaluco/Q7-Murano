@@ -10,6 +10,7 @@ This library is used for data manipulation. To install de library for usage, sim
 
 <h1> Code and Results </h1>
 <h2> Simple Moving Average </h2>
+<p> Test by running muranoquestao7.py </p>
 <p> The first function of the code is used to calculate and plot the stock's simple moving
 average using Pandas' built-in function "rolling()". where it calculates the "mean" using a specific window
 size. </p>
@@ -18,6 +19,7 @@ with their daily closing prices being plotted against its respective dataframe. 
 with it's closing prices, it's moving average with 4 different window sizes shall also appear.</p>
 
 <h2> Correlation </h2>
+<p> Test by running muranoquestao7.py </p>
 <p>This section of the program will analyze the correlation between
 the last 100 days of each stock in question. The choice for the 100 
 day timeframe came out of convenience, when dealing with stocks that have

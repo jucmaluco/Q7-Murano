@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
+import numpy as np
 
 def linear_regression(file_name):
     filepath = "Data/Stocks/"+file_name+".us.txt"
@@ -32,14 +33,21 @@ def linear_regression(file_name):
 
     # Sort results by Date for proper plotting
     dfr = dfr.sort_values(by="Date")
-    print(dfr)
+
+    # Calculate the overall regression trend line
+    trend_X = np.arange(len(df)).reshape(-1, 1)
+    trend_regressor = LinearRegression()
+    trend_regressor.fit(trend_X, df["Close"].values)
+    trend_y = trend_regressor.predict(trend_X)
+
     # Plot the results
     plt.figure(figsize=(16, 8))
     plt.plot(dfr["Date"], dfr["Actual Price"], label="Actual Price", color="blue", linewidth=2)
     plt.plot(dfr["Date"], dfr["Predicted Price"], label="Predicted Price", color="orange", linestyle="--", linewidth=2)
+    plt.plot(df["Date"], trend_y, label="Trend Line", color="red", linewidth=2)  # Add trend line
     plt.ylabel("Close Price", fontsize=16)
     plt.xlabel("Date", fontsize=16)
-    plt.title("Actual vs Predicted Close Prices Over Time", fontsize=18)
+    plt.title(f"Actual vs Predicted Close Prices for {file_name.upper()} Over Time", fontsize=18)
     plt.legend()
     plt.show()
 

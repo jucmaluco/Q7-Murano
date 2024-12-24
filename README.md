@@ -43,6 +43,8 @@ the following rank shall be printed on the terminal: </p>
 <p> When running the close, it is clear that the predicted prices match very closely to the real values, as seen in the data below: </p>
 
 ![image](https://github.com/user-attachments/assets/2dfa24dc-11b8-4a60-a876-2eadc9bffff2)
+![image](https://github.com/user-attachments/assets/e488180c-127c-4563-8a7f-8df91ed3f6bd)
+
 
 The same is true for all the companies analyzed (Microsoft, Apple and Google). 
 <h2> External help and sources: </h2>

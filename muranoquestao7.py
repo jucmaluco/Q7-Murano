@@ -22,7 +22,7 @@ def plot_sma(type, id):
     plt.plot(df['Date'], df['SMA50'], label='SMA (Window = 50)', marker='o', linewidth=1)
     plt.plot(df['Date'], df['SMA200'], label='SMA (Window = 200)', marker='o', linewidth=1)
 
-    plt.title('Stock:' + id, fontsize=14)
+    plt.title(type + " " + id, fontsize=14)
     plt.xlabel('Date', fontsize=12)
     plt.ylabel('Price', fontsize=12)
     plt.legend()
@@ -44,7 +44,7 @@ def close_prices(input_folder, output_file):
                     last_100_close = df['Close'].tail(100).reset_index(drop=True)
                     all_data[file_name.replace('.txt', '')] = last_100_close
             except Exception as e:
-                print(f"Erro ao processar {file_name}: {e}")
+                print(f"Error processing {file_name}, since the stock analyzed does not have over 100 Closing Prices columns.")
 
     # Add the data to a single dataframe
     consolidated_data = pd.DataFrame(all_data)

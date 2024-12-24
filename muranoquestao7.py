@@ -25,38 +25,35 @@ def plot_sma(type, id):
     plt.title('Stock:' + id, fontsize=14)
     plt.xlabel('Date', fontsize=12)
     plt.ylabel('Price', fontsize=12)
-    plt.legend()  # Add a legend
-    plt.grid()  # Add a grid
+    plt.legend()
+    plt.grid()
     plt.show()
 
 
 def close_prices(input_folder, output_file):
     all_data = {}
 
-    # Percorre todos os arquivos na pasta
     for file_name in os.listdir(input_folder):
         if file_name.endswith('.txt'):
             file_path = os.path.join(input_folder, file_name)
 
-            # Lê o arquivo .txt em um DataFrame
             try:
-                df = pd.read_csv(file_path)  # Ajuste o separador conforme necessário
+                df = pd.read_csv(file_path)
                 if 'Close' in df.columns and len(df['Close']) >= 100:
-                    # Extrai as últimas 100 linhas da coluna 'Close'
+                    # Extract only the last 100 lines of the close column
                     last_100_close = df['Close'].tail(100).reset_index(drop=True)
-                    # Armazena no dicionário com o nome do arquivo (sem extensão) como chave
                     all_data[file_name.replace('.txt', '')] = last_100_close
             except Exception as e:
                 print(f"Erro ao processar {file_name}: {e}")
 
-    # Consolida os dados em um único DataFrame
+    # Add the data to a single dataframe
     consolidated_data = pd.DataFrame(all_data)
 
-    # Salva os dados em um novo arquivo .txt
+    # Save the data on a txt file
     consolidated_data.to_csv(output_file, index=False)
 
 def most_correlated_pairs(file_path, top_n=5):
-        df = pd.read_csv(file_path, sep=',')  # Adjust separator if necessary (e.g., ',' or '\t')
+        df = pd.read_csv(file_path, sep=',')
         correlation_matrix = df.corr()
         correlations = correlation_matrix.unstack().reset_index()
         correlations.columns = ['Column_1', 'Column_2', 'Correlation']
@@ -67,11 +64,9 @@ def most_correlated_pairs(file_path, top_n=5):
         ).head(top_n)
         print(most_correlated)
 
-# Caminhos de entrada e saída
-input_folder = "Data/Stocks"  # Substitua pelo caminho real
-output_file = "Data/open.txt"  # Substitua pelo caminho real
+input_folder = "Data/Stocks"
+output_file = "Data/open.txt"
 
-# Processa os arquivos
 close_prices(input_folder, output_file)
 most_correlated_pairs("Data/open.txt")
 

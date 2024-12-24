@@ -54,5 +54,10 @@ the following rank shall be printed on the terminal: </p>
 
 
 The same is true for all the companies analyzed (Microsoft, Apple and Google). 
+This may be because of how the other parameters are used to determine the stock price. By using it's "Open", "High", "Low" and "Volume" data to predict the "Closing" data, and with 80% of the stock's past performance being used as a training database, it is hard to miss and looked for price.
+<p> This result would not replicate when attempting to predict future stock prices, but assembling a regression line to determine future trends could help, as shown in the following graph: </p>
+
+![image](https://github.com/user-attachments/assets/9ea0d929-76f8-4d0d-9a37-35b1db787981)
+
 <h2> External help and sources: </h2>
 To learn more about linear regression and to complete this assignement, it would be honest to credit DataGeek's youtube video: https://www.youtube.com/watch?v=HiTBhBrs5q0, and Joel Grus' book "Data Science From Scratch". 

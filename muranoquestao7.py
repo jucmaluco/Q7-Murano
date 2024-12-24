@@ -1,7 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
-import seaborn as sns
 
 df = pd.read_csv("Data/Stocks/abmd.us.txt")
 df['Date'] = pd.to_datetime(df['Date'])

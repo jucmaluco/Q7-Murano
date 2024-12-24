@@ -20,7 +20,14 @@ size. </p>
 <p> After the code has been run, 10 different Stocks and ETFs will appear
 with their daily closing prices being plotted against its respective dataframe. Along
 with it's closing prices, it's moving average with 4 different window sizes shall also appear.</p>
+<p> For example, here is the graph generated for abax.us stock price:</p>
 
+![image](https://github.com/user-attachments/assets/a35a32c8-e6e7-4250-9dda-e91afcc8a51c)
+<p> It's worth noticing how SMA's with bigger windows, such as the purple line in the graph above, show a certain "delay" when compared to the original "Close Price" graph. This happens because of the way the moving average is calculated. </p>
+<p> Since a built-in function was used, the code does not exemplify how the 'thinking' behind calculating the SMA happens, but the formula used is this: </p>
+
+![image](https://github.com/user-attachments/assets/9ba38cb9-32e9-407e-a1d0-3b93d8bb3bca)
+The "K" value would be the size of the window, and, as seen in the graph, increasing K means a decrease in accuracy. 
 <h2> Correlation </h2>
 <p> Test by running muranoquestao7.py </p>
 <p>This section of the program will analyze the correlation between
@@ -34,7 +41,7 @@ the following rank shall be printed on the terminal: </p>
 
 ![image](https://github.com/user-attachments/assets/9b7a7a28-d0cb-4319-bacd-b28d711d5642)
 
-<p> The rank given by the code makes sense, as the most correlated companies accompany oil prices. Such similiarities continue down the list. </p>
+<p> The rank given by the code makes sense, as the two most correlated companies are directly related to the fluctuation of oil prices. Such similiarities continue down the list, contributing to the certainty that the correlation results are correct. </p>
 
 <h2> Regression </h2>
 <p> Test by running muranoquestao7letraC.py</p>

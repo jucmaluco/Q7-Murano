@@ -8,6 +8,9 @@
 <h3> Pandas </h3>
 This library is used for data manipulation. To install de library for usage, simply run "pip install pandas" on your code terminal.
 
+<h3> sklearn </h3>
+When running the muranoquestao7letraC.py program, user will need to import and install "sklearn.model_selection" and "sklearn.linear_model". To install both on your computer, simply run "pip install sklearn" on your code terminal. 
+
 <h1> Code and Results </h1>
 <h2> Simple Moving Average </h2>
 <p> Test by running muranoquestao7.py </p>
@@ -32,3 +35,11 @@ the following rank shall be printed on the terminal: </p>
 ![image](https://github.com/user-attachments/assets/9b7a7a28-d0cb-4319-bacd-b28d711d5642)
 
 <p> The rank given by the code makes sense, as the most correlated companies accompany oil prices. Such similiarities continue down the list. </p>
+
+<h2> Regression </h2>
+<p> Test by running muranoquestao7letraC.py</p>
+<P> This file will use the tools provided by the sklearn libraries to apply a linear regression and attempt to predict stock price flutuations. 
+</P>
+
+<h2> External help and sources: </h2>
+To learn more about linear regression and to complete this assignement, it would be honest to credit DataGeek's youtube video: https://www.youtube.com/watch?v=HiTBhBrs5q0, and Joel Grus' book "Data Science From Scratch". 
